@@ -13,7 +13,7 @@ const images = {
 
 export const TextureSelector = () => {
   const [visible, setVisible] = useState(false);
-  const [activeTexture, setTexture] = useStore((store) => [
+  const [activeTexture, setTexture] = useStore((state) => [
     state.texture,
     state.setTexture,
   ]);

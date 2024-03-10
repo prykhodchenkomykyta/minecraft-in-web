@@ -20,11 +20,11 @@ export const Cube = ({ position, texture }) => {
     <mesh
       ref={ref}
       onPointerMove={(e) => {
-        e.stopPropagation;
+        e.stopPropagation();
         setIsHovered(true);
       }}
       onPointerOut={(e) => {
-        e.stopPropagation;
+        e.stopPropagation();
         setIsHovered(false);
       }}
       onClick={(e) => {
