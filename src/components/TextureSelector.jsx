@@ -1,6 +1,6 @@
-import { useKeyboard } from "../hooks/useKeyboard";
+import { useEffect, useState } from "react";
 import { useStore } from "../hooks/useStore";
-import { useState, useEffect } from "react";
+import { useKeyboard } from "../hooks/useKeyboard";
 import { dirtImg, grassImg, glassImg, logImg, woodImg } from "../images/images";
 
 const images = {
@@ -17,15 +17,21 @@ export const TextureSelector = () => {
     state.texture,
     state.setTexture,
   ]);
-  const { dirt, glass, grass, wood, log } = useKeyboard();
+  const { dirt, grass, glass, wood, log } = useKeyboard();
 
   useEffect(() => {
-    const textures = { dirt, glass, grass, wood, log };
+    const textures = {
+      dirt,
+      grass,
+      glass,
+      wood,
+      log,
+    };
     const pressedTexture = Object.entries(textures).find(([k, v]) => v);
     if (pressedTexture) {
       setTexture(pressedTexture[0]);
     }
-  }, [dirt, glass, grass, wood, log]);
+  }, [setTexture, dirt, grass, glass, wood, log]);
 
   useEffect(() => {
     const visibilityTimeout = setTimeout(() => {
@@ -46,7 +52,7 @@ export const TextureSelector = () => {
               key={k}
               src={src}
               alt={k}
-              className={`${k === activeTexture ? "active" : "nothing"}`}
+              className={`${k === activeTexture ? "active" : ""}`}
             />
           );
         })}

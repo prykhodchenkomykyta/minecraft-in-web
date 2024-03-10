@@ -5,6 +5,7 @@ export const Menu = () => {
     state.saveWorld,
     state.resetWorld,
   ]);
+
   return (
     <div className="menu absolute">
       <button onClick={() => saveWorld()}>Save</button>
