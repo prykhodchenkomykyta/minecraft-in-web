@@ -7,8 +7,8 @@ export const Menu = () => {
   ]);
   return (
     <div className="menu absolute">
-      <button onClick{() => saveWorld()}>Save</button>
-      <button onClick{() => resetWorld()}>Reset</button>
+      <button onClick={() => saveWorld()}>Save</button>
+      <button onClick={() => resetWorld()}>Reset</button>
     </div>
   );
 };
